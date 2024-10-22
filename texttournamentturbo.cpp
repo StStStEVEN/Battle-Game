@@ -35,10 +35,10 @@ int main() {
 	int turns = 0;
 
 	cout << endl << "TIME FOR THE FIGHT!" << endl;
-    cout << "Introducing the challengers" << endl;
+    cout << "Introducing the challengers!" << endl;
     cout << p1Name << ": " << p1Wins << " Wins" << endl;
     cout << p2Name << ": " << p2Wins << " Wins" << endl;
-    cout << "---------------------------------------" << endl << endl;
+    cout << "_________________________________" << endl << endl;
 
 	while ((p1Health > 0) && (p2Health > 0) && (turns < 100)) {
 		int attackRoll;
@@ -68,20 +68,22 @@ int main() {
 		turns++;
 	}
 
-	cout << "FIGHT COMPLETE ------------------------" << endl;
+	cout << "_____________FIGHT COMPLETE____________" << endl;
 	if (((p1Health > 0) && (p2Health > 0)) || ((p1Health <= 0) && (p2Health <= 0))) {
-		cout << "The results are in..." << endl;
-		cout << "...the fight was so close that it ended in a DRAW!" << endl;
+		cout << "It's time to reveal the result..." << endl;
+		cout << "The fight was so close that it ended in a DRAW!" << endl;
 		cout << "What a great performance from both challengers!" << endl;
 	}
 	else if (p1Health > 0) {
-		cout << "The results are in..." << endl;
-		cout << "...it looks like " << p1Name << " pulled off the win!" << endl;
+		cout << "It's time to reveal the result..." << endl;
+		cout << p1Name << " beats " << p2Name << " !" << endl;
+		cout << "Congratulation!" <<endl;
 		p1Wins++;
 	}
 	else {
-		cout << "The results are in..." << endl;
-		cout << "...it looks like " << p2Name << " pulled off the win!" << endl;
+		cout << "It's time to reveal the result..." << endl;
+		cout << p2Name << " beats " << p1Name << " !" << endl;
+		cout << "Congratulation!" <<endl;
 		p2Wins++;
 	}
 
@@ -142,8 +144,8 @@ void setupPlayerStats(string& name, int& str, int& def, int& armor, int& skill, 
 			accept = true;
 		}
 		else {
-			cout << "You exceed the stats limit." << endl;
-			cout << "Try to creat another character." << endl;
+			cout << "Your character is too overpowered." << endl;
+			cout << "Please try to create another character." << endl;
 		}
 
 	}
